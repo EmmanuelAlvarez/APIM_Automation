@@ -1,5 +1,5 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "ApimServiceName": {
@@ -20,7 +20,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/eureka-api/apim-np-integration-master.template.json')]",
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/carterainteligente-api/apim-np-integration-master.template.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
@@ -28,13 +28,13 @@
             "value": "[parameters('ApimServiceName')]"
           },
           "LinkedTemplatesBaseUrl":{
-            "value": "[concat(parameters('LinkedTemplatesBaseUrl'), '/eureka-api')]"
+            "value": "[concat(parameters('LinkedTemplatesBaseUrl'), '/carterainteligente-api')]"
           }
         }
       },
-      "name": "eureka-automation",
+      "name": "CarteraInteligente-test",
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2018-05-01",
+      "apiVersion": "2019-10-01",
       "dependsOn": []
     }
   ]

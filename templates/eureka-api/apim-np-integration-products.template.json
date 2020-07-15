@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "description": "a test product",
+        "terms": "some terms",
+        "subscriptionRequired": true,
+        "approvalRequired": true,
+        "subscriptionsLimit": 1,
+        "state": "notPublished",
+        "displayName": "eurekademo"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/eurekademo')]",
+      "type": "Microsoft.ApiManagement/service/products",
+      "apiVersion": "2019-01-01",
+      "dependsOn": []
+    }
+  ]
+}
